@@ -106,7 +106,7 @@ master$QUART=ifelse(
   )
 )
 ## Create a new matrix to store quarterly prices
-qp=matrix(nrow=0,ncol=5)
+qp=matrix(nrow=0,ncol=6)
 for(i in seq(1,4,1)){
   q=subset(master,master$QUART==i)
   ## remove all listings with NA lbs or price values
@@ -119,15 +119,17 @@ for(i in seq(1,4,1)){
     x=subset(q,paste(q$SPECIES,q$STOCK,sep=", ")==s)
     x$dup=duplicated(x)
     x=subset(x,x$dup==FALSE)
+    y=subset(x,x$MONTH==min(x$MONTH))
     newrow=c(
       i,
       s,
       mean(x$PRICE),
       sum(x$LBS*x$PRICE)/sum(x$LBS),
-      mean(subset(x,x$MONTH==min(x$MONTH))$PRICE)
+      mean(y$PRICE),
+      sum(y$LBS*y$PRICE)/sum(y$LBS)
       )
     qp=rbind(qp,newrow)
-    colnames(qp)=c("QUART","STOCK","LIST","WEIGHTED","FIRST")
+    colnames(qp)=c("QUART","STOCK","LIST","WEIGHTED","L_FIRST","W_FIRST")
   }
 }
 qp=as.data.frame(qp)
@@ -135,7 +137,22 @@ qp$QUART=as.numeric(as.character(qp$QUART))
 qp$STOCK=as.character(qp$STOCK)
 qp$LIST=round(as.numeric(as.character(qp$LIST)),3)
 qp$WEIGHTED=round(as.numeric(as.character(qp$WEIGHTED)),3)
-qp$FIRST=round(as.numeric(as.character(qp$FIRST)),3)
+qp$L_FIRST=round(as.numeric(as.character(qp$L_FIRST)),3)
+qp$W_FIRST=round(as.numeric(as.character(qp$W_FIRST)),3)
+## Check to see which price (list, weighted, or first) 
+## gives the most value
+qp$MAX=NA
+for(i in 1:nrow(qp)){
+  x=c("LIST","WEIGHTED","L_FIRST","W_FIRST")[which(qp[i,3:6]==max(qp[i,3:6]))]
+  if(length(x)==1){
+    qp$MAX[i]=x
+    rm(x)
+  } else {
+    x=paste(x[order(x)],collapse=" ")
+    qp$MAX[i]=x
+    rm(x)
+  }
+}
 
 ## Write the results out to a file
 setwd("C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Quota Listings/")
