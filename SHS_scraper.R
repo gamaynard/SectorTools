@@ -106,30 +106,36 @@ master$QUART=ifelse(
   )
 )
 ## Create a new matrix to store quarterly prices
-qp=
-## Calculate a monthly average for each stock
-prices=matrix(nrow=0,ncol=4)
-for(i in seq(1,12,1)){
-  month=subset(master,master$MONTH==i)
+qp=matrix(nrow=0,ncol=5)
+for(i in seq(1,4,1)){
+  q=subset(master,master$QUART==i)
   ## remove all listings with NA lbs or price values
-  month=subset(month,is.na(month$LBS*month$PRICE)==FALSE)
+  q=subset(q,is.na(q$LBS*q$PRICE)==FALSE)
   ## assign each listing a stock
-  stocks=unique(paste(month$SPECIES,month$STOCK,sep=", "))
+  stocks=unique(paste(q$SPECIES,q$STOCK,sep=", "))
   ## Calculate a lb weighted average and a listing average 
   ## for each stock
   for(s in stocks){
-    x=subset(month,paste(month$SPECIES,month$STOCK,sep=", ")==s)
+    x=subset(q,paste(q$SPECIES,q$STOCK,sep=", ")==s)
     x$dup=duplicated(x)
     x=subset(x,x$dup==FALSE)
-    newrow=c(i,s,mean(x$PRICE),sum(x$LBS*x$PRICE)/sum(x$LBS))
-    prices=rbind(prices,newrow)
-    colnames(prices)=c("MONTH","STOCK","LIST","WEIGHTED")
+    newrow=c(
+      i,
+      s,
+      mean(x$PRICE),
+      sum(x$LBS*x$PRICE)/sum(x$LBS),
+      mean(subset(x,x$MONTH==min(x$MONTH))$PRICE)
+      )
+    qp=rbind(qp,newrow)
+    colnames(qp)=c("QUART","STOCK","LIST","WEIGHTED","FIRST")
   }
 }
-prices=as.data.frame(prices)
-prices$MONTH=as.numeric(as.character(prices$MONTH))
-prices$STOCK=as.character(prices$STOCK)
-prices$LIST=round(as.numeric(as.character(prices$LIST)),3)
+qp=as.data.frame(qp)
+qp$QUART=as.numeric(as.character(qp$QUART))
+qp$STOCK=as.character(qp$STOCK)
+qp$LIST=round(as.numeric(as.character(qp$LIST)),3)
+qp$WEIGHTED=round(as.numeric(as.character(qp$WEIGHTED)),3)
+qp$FIRST=round(as.numeric(as.character(qp$FIRST)),3)
 
 ## Write the results out to a file
 setwd("C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Quota Listings/")
@@ -137,8 +143,8 @@ wb=loadWorkbook(
   paste("QuotaPrices_",fy,".xlsx",sep=""), 
   create = TRUE
 )
-
-## Create a worksheet in the workbook for each result object and write out the results
+## Create a worksheet in the workbook for each result object 
+## and write out the results
 createSheet(
   wb, 
   name="MonthlyPrices"
@@ -148,6 +154,17 @@ writeWorksheet(
   as.data.frame(prices), 
   sheet="MonthlyPrices", 
   startRow=1, 
+  startCol=1
+)
+createSheet(
+  wb,
+  name="QuarterlyPrices"
+)
+writeWorksheet(
+  wb,
+  as.data.frame(qp),
+  sheet="QuarterlyPrices",
+  startRow=1,
   startCol=1
 )
 ## Save out the workbook
