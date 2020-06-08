@@ -94,6 +94,43 @@ prices$MONTH=as.numeric(as.character(prices$MONTH))
 prices$STOCK=as.character(prices$STOCK)
 prices$LIST=round(as.numeric(as.character(prices$LIST)),3)
 prices$WEIGHTED=round(as.numeric(as.character(prices$WEIGHTED)),3)
+
+## Assign each listing a quarter
+master$QUART=ifelse(
+  master$MONTH%in%c(5,6,7),1,
+  ifelse(master$MONTH%in%c(8,9,10),2,
+    ifelse(master$MONTH%in%c(11,12,1),3,
+      ifelse(master$MONTH%in%c(2,3,4),4,NA
+      )
+    )
+  )
+)
+## Create a new matrix to store quarterly prices
+qp=
+## Calculate a monthly average for each stock
+prices=matrix(nrow=0,ncol=4)
+for(i in seq(1,12,1)){
+  month=subset(master,master$MONTH==i)
+  ## remove all listings with NA lbs or price values
+  month=subset(month,is.na(month$LBS*month$PRICE)==FALSE)
+  ## assign each listing a stock
+  stocks=unique(paste(month$SPECIES,month$STOCK,sep=", "))
+  ## Calculate a lb weighted average and a listing average 
+  ## for each stock
+  for(s in stocks){
+    x=subset(month,paste(month$SPECIES,month$STOCK,sep=", ")==s)
+    x$dup=duplicated(x)
+    x=subset(x,x$dup==FALSE)
+    newrow=c(i,s,mean(x$PRICE),sum(x$LBS*x$PRICE)/sum(x$LBS))
+    prices=rbind(prices,newrow)
+    colnames(prices)=c("MONTH","STOCK","LIST","WEIGHTED")
+  }
+}
+prices=as.data.frame(prices)
+prices$MONTH=as.numeric(as.character(prices$MONTH))
+prices$STOCK=as.character(prices$STOCK)
+prices$LIST=round(as.numeric(as.character(prices$LIST)),3)
+
 ## Write the results out to a file
 setwd("C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Quota Listings/")
 wb=loadWorkbook(
@@ -104,12 +141,12 @@ wb=loadWorkbook(
 ## Create a worksheet in the workbook for each result object and write out the results
 createSheet(
   wb, 
-  name="MarketPrices"
+  name="MonthlyPrices"
 )
 writeWorksheet(
   wb, 
   as.data.frame(prices), 
-  sheet="MarketPrices", 
+  sheet="MonthlyPrices", 
   startRow=1, 
   startCol=1
 )
