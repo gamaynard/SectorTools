@@ -86,11 +86,20 @@ for(i in 2:nchar(data)){
     (i==nchar(data))){
     lineStop=i
     ## Create a new line of data, stopping here
-    newline=substr(
-      x=data, 
-      start=lineStart, 
-      stop=lineStop-1
-    )
+    if(i!=nchar(data)){
+      newline=substr(
+        x=data, 
+        start=lineStart, 
+        stop=lineStop-1
+      )
+    }
+    if(i==nchar(data)){
+      newline=substr(
+        x=data,
+        start=lineStart,
+        stop=lineStop
+      )
+    }
     ## Write the new line out to a new character vector
     newdata=c(newdata,newline)
     ## Reset the startpoint for the next cut
@@ -116,3 +125,136 @@ for(i in 1:length(data)){
 rm(a,i)
 ## Rename newdata to data
 data=newdata;rm(newdata)
+## Create a new matrix to store three columns of data (species/size, size,
+## and everything else)
+newdata=matrix(nrow=nrow(data),ncol=3)
+for(i in 1:nrow(data)){
+  ## The first column stays the same
+  newdata[i,1]=data[i,1]
+  ## The second column is the size class
+  ## Create a split character vector to loop through
+  splitData=strsplit(x=data[i,2],split="")[[1]]
+  ## Set the loop to start at character 1
+  lineStart=1
+  ## As long as the fish isn't halibut
+  if(grepl(
+      pattern="HALIBUT",
+      x=data[i,1]
+  )==FALSE){
+    ## For each character
+    for(j in 2:nchar(data[i,2])){
+      ## If the previous character is a number and the current character is a letter
+      if(splitData[j]%in%seq(0,9,1)&&grepl("[A-Za-z]",splitData[j-1])){
+        lineStop=j
+        ## Create a new line of data, stopping here
+        newline=substr(
+          x=data[i,2], 
+          start=lineStart, 
+          stop=lineStop-1
+        )
+        ## Write the new line out to the second column of newdata
+        newdata[i,2]=newline
+        ## Write the remainder out to the third column of newdata
+        newdata[i,3]=substr(
+          x=data[i,2],
+          start=j,
+          stop=nchar(data[i,2])
+        )
+      }
+    }
+  }
+  if(grepl(
+      pattern="HALIBUT",
+      x=data[i,1]
+    )==TRUE){
+      ## For each character
+      for(j in 2:nchar(data[i,2])){
+        ## If the previous character is a hyphen, and the current character is a 
+        ## number greater than 1
+        if(splitData[j-1]=="-"&&as.numeric(splitData[j])>1){
+          lineStop=j+2
+          ## Create a new line of data, stopping here
+          newline=substr(
+            x=data[i,2], 
+            start=lineStart, 
+            stop=lineStop-1
+          )
+          ## Write the new line out to the second column of newdata
+          newdata[i,2]=newline
+          ## Write the remainder out to the third column of newdata
+          newdata[i,3]=substr(
+            x=data[i,2],
+            start=j,
+            stop=nchar(data[i,2])
+          )
+        }
+        ## If the previous character is a hyphen, and the current character is 1
+        if(splitData[j-1]=="-"&&as.numeric(splitData[j])==1){
+          lineStop=j+3
+          ## Create a new line of data, stopping here
+          newline=substr(
+            x=data[i,2], 
+            start=lineStart, 
+            stop=lineStop-1
+          )
+          ## Write the new line out to the second column of newdata
+          newdata[i,2]=newline
+          ## Write the remainder out to the third column of newdata
+          newdata[i,3]=substr(
+            x=data[i,2],
+            start=j,
+            stop=nchar(data[i,2])
+          )
+        }  
+      }
+    }
+  }
+## Clean up
+data=newdata;rm(newdata,i,j,lineStart,lineStop,newline,splitData)
+## Create a new matrix with four columns to store prices in the fourth column
+newdata=matrix(nrow=nrow(data),ncol=4)
+for(i in 1:nrow(data)){
+  ## The first column stays the same
+  newdata[i,1]=data[i,1]
+  ## The second column stays the same
+  newdata[i,2]=data[i,2]
+  ## Create a split character vector to loop through
+  splitData=strsplit(x=data[i,3],split="")[[1]]
+  ## Set the loop to start at character 1
+  lineStart=1
+  for(j in 2:nchar(data[i,3])){
+    ## If the current character is a $ and there are no $ before it
+    if(splitData[j]=="$"&&sum(splitData[1:j-1]=="$")==0){
+      lineStart=j
+      lineStop=nchar(data[i,3])
+      newline=substr(
+        x=data[i,3], 
+        start=lineStart, 
+        stop=lineStop
+      )
+      newdata[i,4]=newline
+      newdata[i,3]=substr(
+        x=data[i,3],
+        start=1,
+        stop=lineStart-1
+      )
+    }
+  }
+}
+## Clean up
+data=newdata
+rm(newdata,i,j,lineStart,lineStop,newline,splitData)
+## Create an empty matrix to store split apart pricing values
+newdata=matrix(ncol=6,nrow=nrow(data))
+for(i in 1:nrow(data)){
+  ## The first three columns are the same
+  newdata[i,1]=data[i,1]
+  newdata[i,2]=data[i,2]
+  newdata[i,3]=data[i,3]
+  ## The fourth through sixth columns are prices, separated by $
+  newdata[i,4:6]=strsplit(
+    x=data[i,4],
+    split="$",
+    fixed=TRUE
+  )[[1]][2:4]
+}
