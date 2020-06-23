@@ -27,9 +27,7 @@ options(scipen = 6, digits = 4) # eliminate scientific notation
 ## ---------------------------
 
 ## load up the packages we will need:  (uncomment as required)
-library(RSelenium)
-library(V8)
-library(rvest)
+library(RCurl)
 library(lubridate)
 ## ---------------------------
 
@@ -257,4 +255,17 @@ for(i in 1:nrow(data)){
     split="$",
     fixed=TRUE
   )[[1]][2:4]
+  ## In the last row of data, remove the sum total values
+  if(i==nrow(data)){
+    newdata[i,6]=substr(
+      newdata[i,6],
+      start=1,
+      stop=4
+    )
+  }
 }
+## Turn the matrix into a data frame and clean up 
+data=as.data.frame(newdata)
+rm(newdata,i)
+## Rename the data columns to something meaningful
+colnames(data)=c("species","size","weights_bad","low","avg","high")
