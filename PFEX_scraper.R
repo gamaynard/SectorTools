@@ -60,6 +60,8 @@ data=xml2::read_html(Link) %>%
     css="#pricesTable"
   ) %>%
   rvest::html_text()
+## Cleanup
+rm(Link)
 ## Remove the column names
 data=gsub(
   pattern='WeightPricesItemConsignedSoldLowAverageHigh',
@@ -95,4 +97,22 @@ for(i in 2:nchar(data)){
     lineStart=i
   }
 }
+## Clean up loop variables
+rm(lineStart,lineStop,splitData,startDate,endDate,i,newline)
 ## REMEMBER TO TRIM THE LAST TWO VALUES OUT OF THE DATA
+## Rename newdata to data
+data=newdata;rm(newdata)
+## Create a new matrix with two columns (species+size and everything else)
+newdata=matrix(ncol=2,nrow=length(data))
+## Split the data object into two columns
+for(i in 1:length(data)){
+  newdata[i,]=strsplit(
+    x=data[i],
+    split=" | ",
+    fixed=TRUE
+  )[[1]]
+}
+## Clean up loop variables
+rm(a,i)
+## Rename newdata to data
+data=newdata;rm(newdata)
