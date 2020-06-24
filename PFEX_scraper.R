@@ -269,3 +269,6 @@ data=as.data.frame(newdata)
 rm(newdata,i)
 ## Rename the data columns to something meaningful
 colnames(data)=c("species","size","weights_bad","low","avg","high")
+## Match the PFEX species to human-readable, standarized species names
+species=read.csv("species.csv")
+
