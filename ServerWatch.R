@@ -82,7 +82,7 @@ if(
 }
 ## Create a summary file
 sink(
-  file=paste("/home/ubuntu/ServerWatchSummary",Sys.Date(),".txt",sep=""),
+  file="/home/ubuntu/ServerWatchSummary.txt",
   append=FALSE
   )
 ## For each user, print out a list of number of successful login attempts and 
