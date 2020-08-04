@@ -301,5 +301,9 @@ cat("To: Server Admin")
 cat("\n")
 cat("From: CCFT Server Bot")
 cat("\n")
+<<<<<<< HEAD
 print(data)
+=======
+cat(data)
+>>>>>>> d9043cdf412553f5bf48470edf22b3388c36af56
 sink()
