@@ -29,6 +29,9 @@ options(scipen = 6, digits = 4) # eliminate scientific notation
 ## load up the packages we will need:  (uncomment as required)
 library(RCurl)
 library(lubridate)
+library(xml2)
+library(rvest)
+library(stringdist)
 ## ---------------------------
 
 ## load up our functions into memory
@@ -269,6 +272,34 @@ data=as.data.frame(newdata)
 rm(newdata,i)
 ## Rename the data columns to something meaningful
 colnames(data)=c("species","size","weights_bad","low","avg","high")
+data$species=as.character(data$species)
 ## Match the PFEX species to human-readable, standarized species names
 species=read.csv("species.csv")
-
+for(i in 1:nrow(data)){
+  a=as.character(data[i,1])
+  y=stringsim(
+    a,
+    as.character(
+      species[,1]
+      )
+    )
+  z=which(y==max(y))
+  x=as.character(species[z,3])
+  data$species[i]=x
+  rm(a,y,z,x)
+}
+data$weights_bad=NULL
+## Create a summary file
+sink(
+  file="/home/ubuntu/PFEXMarketReport.txt",
+  append=FALSE
+)
+## Print out the data
+cat(paste("Subject: PFEX Market Report ",Sys.Date(),sep=""))
+cat("\n")
+cat("To: Server Admin")
+cat("\n")
+cat("From: CCFT Server Bot")
+cat("\n")
+cat(data)
+sink()
