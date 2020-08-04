@@ -87,13 +87,19 @@ sink(
   )
 ## For each user, print out a list of number of successful login attempts and 
 ## number of failed login attempts
-cat("############## SERVER WATCH SUMMARY FILE #############")
+cat(paste("Subject: SERVER WATCH SUMMARY ",Sys.Date(),sep=""))
+cat("\n")
+cat("To: Server Admin")
+cat("\n")
+cat("From: CCFT Server Bot")
+cat("\n")
+cat("-------------- SERVER WATCH SUMMARY FILE -------------")
 cat("\n")
 cat(paste("TODAY'S DATE: ",Sys.Date(),sep=""))
 cat("\n")
 cat(paste("DATE RANGE: ",min(x$date)," - ",max(x$date),sep=""))
 cat("\n")
-cat("#################### USER SUMMARY ####################")
+cat("------------------- USER SUMMARY ---------------------")
 cat("\n")
 users=c("stephanie","holly","seth","john","mel")
 for(u in users){
@@ -117,7 +123,7 @@ for(u in users){
     cat(unique(y$IP))
     cat("\n")
     cat("\n")
-    cat("--------------------------------------------------")
+    cat("---------------------------------------------------")
     cat("\n")
   } else {
     cat(paste("USER: ",u,sep=""))
@@ -125,7 +131,7 @@ for(u in users){
     cat("NO LOGINS RECORDED FOR USER")
     cat("\n")
     cat("\n")
-    cat("--------------------------------------------------")
+    cat("---------------------------------------------------")
     cat("\n")
   }
 }
