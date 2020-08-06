@@ -294,13 +294,19 @@ sink(
   file="/home/ubuntu/PFEXMarketReport.txt",
   append=FALSE
 )
-## Print out the data
+## Print out the report
 cat(paste("Subject: PFEX Market Report ",Sys.Date(),sep=""))
 cat("\n")
 cat("To: CCFT Members")
 cat("\n")
 cat("From: CCFT Server Bot")
 cat("\n")
+cat("-------------------------------------------------------------------------")
+cat("\n")
+cat(paste("PFEX MARKET REPORT: ",Sys.Date(),"\n",sep=""))
+cat("This is an automated message from the CCFT server. If you no longer \n")
+cat("wish to receive these messages, please contact the server admin at \n")
+cat("george<at>capecodfishermen.org \n")
 cat("-------------------------------------------------------------------------")
 cat("\n")
 cat("The following report includes 7 day low, average, and high auction prices")
