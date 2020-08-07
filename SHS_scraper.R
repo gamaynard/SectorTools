@@ -38,9 +38,14 @@ library(XLConnect)
 
 ## ---------------------------
 ## Set fishing year
-fy="FY19"
+today=Sys.Date()
+FY=year(today)
+if(month(today)<5){
+  FY=FY-1
+}
+fy=paste0("FY",FY-2000)
 ## Read in all SHS-generated listings for the fishing year in question
-directory=paste("C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Quota Listings/Other_",fy,sep="")
+directory=paste0("/home/ubuntu/QuotaListing/",fy)
 filelist=paste(directory,dir(directory)[which(grepl("SHS",dir(directory))*grepl(".pdf",dir(directory))==1)],sep="/")
 speciesLookup=read.csv("SHS_SpeciesList.csv")
 master=data.frame(
@@ -53,23 +58,54 @@ master=data.frame(
 for(filename in filelist){
   raw=extract_tables(filename)
   if(length(raw)>1){
-    raw[[1]]=cbind(raw[[1]],"ISO")
-    raw[[2]]=cbind(raw[[2]],"Available")
-    data=rbind(raw[[1]][-1,],raw[[2]][-1,])
-    colnames(data)=c("DATE","TRADEID","SHS_SPECIES","LBS","PRICE","STATUS")
-    data=as.data.frame(data)
-    data$DATE=ifelse(is.na(data$DATE)==FALSE,as.character(mdy(paste(data$DATE,year(now()),sep="/"))),NA)
-    data=merge(data,speciesLookup)
-    data$SHS_SPECIES=NULL
-    data$LBS=as.numeric(gsub("[^0-9.]", "", data$LBS))
-    data$PRICE=as.numeric(gsub("[^0-9.]", "", data$PRICE))
-    data$SECTOR="SHS"
-    data=select(data,DATE,LBS,PRICE,SPECIES,STOCK)
-    master=rbind(master,data)
+    data=matrix(ncol=5,nrow=0)
+    for(i in 1:length(raw)){
+      data=rbind(data,raw[[i]][-1,])
+    }
+  } else {
+    data=raw[-1]
   }
+  colnames(data)=c("DATE","TRADEID","SHS_SPECIES","LBS","PRICE")
+  data=as.data.frame(data)
+  for(i in 1:nrow(data)){
+    if(data$DATE[i]==""){
+      data$DATE[i-1]=""
+    }
+  }
+  data=subset(data,data$DATE!="")
+  data$DATE=paste0(data$DATE,"/",FY)
+  data$MONTH=month(mdy(data$DATE))
+  data$DAY=day(mdy(data$DATE))
+  data$YEAR=ifelse(data$MONTH<5,FY+1,FY)
+  data$DATE=ymd(paste(data$YEAR,data$MONTH,data$DAY,sep="-"))
+  data=merge(data,speciesLookup)
+  data$SHS_SPECIES=NULL
+  data$LBS=ifelse(
+    grepl(
+      pattern="UP TO",
+      x=data$LBS,
+      ignore.case=TRUE
+    ),
+    gsub("UP TO","",data$LBS),
+    as.character(data$LBS))
+  data$LBS=as.numeric(gsub("[^0-9.]", "", data$LBS))
+  data$PRICE=as.numeric(gsub("[^0-9.]", "", data$PRICE))
+  data$SECTOR="SHS"
+  data=select(data,DATE,LBS,PRICE,SPECIES,STOCK,TRADEID)
+  master=rbind(master,data)
 }
+## Remove all NA values
+master$ERROR=rowSums(is.na(master))
+master=subset(master,master$ERROR==0)
+master$ERROR=NULL
 ## Assign each listing a month
 master$MONTH=month(ymd(as.character(master$DATE)))
+## Remove duplicate records
+master$dup=duplicated(master$TRADEID)
+master=subset(master,master$dup==FALSE)
+master$dup=NULL
+master$TRADEID=NULL
+master$SECTOR="SHS"
 ## Calculate a monthly average for each stock
 prices=matrix(nrow=0,ncol=4)
 for(i in seq(1,12,1)){
