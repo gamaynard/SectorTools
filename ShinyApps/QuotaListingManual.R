@@ -1,8 +1,9 @@
 ## ---------------------------
 ##
-## Script name: 
+## Script name: QuotaListingManual.R
 ##
-## Purpose of script:
+## Purpose of script: Allows the user to manually add quota listings from non
+##    standardized sources (i.e., all sectors except for SHS)
 ##
 ## Author: George A. Maynard
 ##
@@ -43,33 +44,43 @@ labelMandatory <- function(label) {
   )
 }
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
-## ---------------------------
-fieldsMandatory <- c("name", "favourite_pkg")
-
-labelMandatory <- function(label) {
-  tagList(
-    label,
-    span("*", class = "mandatory_star")
-  )
-}
-humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
-appCSS <-
-  ".mandatory_star { color: red; }"
-fieldsAll <- c("name", "favourite_pkg", "used_shiny", "r_num_years", "os_type")
-responsesDir <- "C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Database/responses/"
 epochTime <- function() {
   as.integer(Sys.time())
 }
-
+## ---------------------------
+## Define which fields will be mandatory
+fieldsMandatory=c("name", "favourite_pkg")
+## Define the color of the mandatory star emphasis
+appCSS=".mandatory_star { color: red; }"
+## Name the fields that will be exported
+fieldsAll=c("name", 
+            "favourite_pkg", 
+            "used_shiny", 
+            "r_num_years", 
+            "os_type"
+            )
+## Define the directory path for storing results
+responsesDir="C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Database/responses/"
+## Read in the up to date species list
+speciesList=read.csv("https://raw.githubusercontent.com/gamaynard/SectorTools/master/SHS_SpeciesList.csv")
 shinyApp(
+  ##############################################################################
+  ## UI
+  ##############################################################################
   ui = fluidPage(
+    ## All shinyjs language goes here
     shinyjs::useShinyjs(),
     shinyjs::inlineCSS(appCSS),
-    titlePanel("Mimicking a Google Form with a Shiny app"),
-    
+    ## Give the app a title
+    titlePanel("Manual Quota Listing Uploads"),
+    ## Create the first screen that the user sees ("form")
     div(
-      id = "form",
-      textInput("name", labelMandatory("Name"), ""),
+      id="form",
+      selectInput(
+        inputId="stock", 
+        label=labelMandatory("Stock"),
+        choices=speciesList$
+        value=""),
       textInput("favourite_pkg", labelMandatory("Favourite R package")),
       checkboxInput("used_shiny", "I've built a Shiny app in R before", FALSE),
       sliderInput("r_num_years", "Number of years using R", 0, 25, 2, ticks = FALSE),
