@@ -44,20 +44,19 @@ labelMandatory <- function(label) {
   )
 }
 humanTime <- function() format(Sys.time(), "%Y%m%d-%H%M%OS")
-epochTime <- function() {
-  as.integer(Sys.time())
-}
 ## ---------------------------
 ## Define which fields will be mandatory
-fieldsMandatory=c("name", "favourite_pkg")
+fieldsMandatory=c("stock", 
+                  "weight",
+                  "price",
+                  "listdate")
 ## Define the color of the mandatory star emphasis
 appCSS=".mandatory_star { color: red; }"
 ## Name the fields that will be exported
-fieldsAll=c("name", 
-            "favourite_pkg", 
-            "used_shiny", 
-            "r_num_years", 
-            "os_type"
+fieldsAll=c("stock", 
+            "weight",
+            "price",
+            "listdate"
             )
 ## Define the directory path for storing results
 responsesDir="C:/Users/George/Desktop/Autotask Workplace/Common/Mooncusser Sector, Inc/Database/responses/"
@@ -78,14 +77,37 @@ shinyApp(
       id="form",
       selectInput(
         inputId="stock", 
-        label=labelMandatory("Stock"),
-        choices=speciesList$
-        value=""),
-      textInput("favourite_pkg", labelMandatory("Favourite R package")),
-      checkboxInput("used_shiny", "I've built a Shiny app in R before", FALSE),
-      sliderInput("r_num_years", "Number of years using R", 0, 25, 2, ticks = FALSE),
-      selectInput("os_type", "Operating system used most frequently",
-                  c("",  "Windows", "Mac", "Linux")),
+        label=labelMandatory("Stock:"),
+        choices=paste(
+          speciesList$SPECIES,
+          speciesList$STOCK,
+          sep="-")[order(
+            paste(
+              speciesList$SPECIES,
+              speciesList$STOCK,
+              sep="-")
+            )],
+        selected=NULL),
+      numericInput(
+        inputId="weight",
+        labelMandatory(label="LBS of Quota Available:"),
+        value=0,
+        min=0,
+        max=500000
+      ),
+      numericInput(
+        inputId="price",
+        labelMandatory(label="Price per Pound:"),
+        value=0.005,
+        min=0.005,
+        max=10.000,
+        step=0.005
+      ),
+      dateInput(
+        inputId="listdate",
+        label="Listing Date:",
+        value=NULL
+      ),
       actionButton("submit", "Submit", class = "btn-primary")
     ),
     shinyjs::hidden(
@@ -110,7 +132,7 @@ shinyApp(
     })
     formData <- reactive({
       data <- sapply(fieldsAll, function(x) input[[x]])
-      data <- c(data, timestamp = epochTime())
+      data <- c(data, timestamp = as.character(Sys.time()))
       data <- t(data)
       data
     })
