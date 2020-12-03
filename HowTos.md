@@ -8,5 +8,6 @@ This file explains how to execute common administrative tasks for the CCFT datab
 `mysql -u root -p`
 2. Select the appropriate database (replace `FYXXXX` with the appropriate name)
 `USE FYXXXX;`
-3. Look up identifying information for the record in the `POTENTIAL_TRANSACTIONS` table, replacing the `...` with a MySQL WHERE clause. 
+3. Look up identifying information (`TransactionNumber`) for the record in the `POTENTIAL_TRANSACTIONS` table, replacing the `...` with a MySQL WHERE clause. 
 `SELECT * FROM POTENTIAL_TRANSACTIONS WHERE ...`
+4. If the record is in the `SECTOR_LEDGER` table it will need to be deleted there first using the following code and replacing `x` with the TransactionNumber from Step 3. `DELETE FROM SECTOR_LEDGER WHERE TransactionNumber = x;` 
