@@ -38,7 +38,7 @@ library(lubridate)
 ## data table
 filelist=dir()
 for(i in 1:length(filelist)){
-  if(grepl("access.log",filelist[i]) == TRUE & grepl("biosamples",filelist[i]) == FALSE){
+  if(grepl("access.log",filelist[i]) == TRUE & grepl("biosamples",filelist[i]) == FALSE & grepl("trust",filelist[i]) == FALSE){
     if(i==1){
       x=read.table(filelist[i])
     } else {
