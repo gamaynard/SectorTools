@@ -1,6 +1,9 @@
-#DATABASE HOW TOs#
+#DATABASE HOW TOs
+
 This file explains how to execute common administrative tasks for the CCFT database
+
 **DELETE A RECORD**
+
 1. Log in to the server as root. You will be prompted for a password after entering this code
 `mysql -u root -p`
 2. Select the appropriate database (replace `FYXXXX` with the appropriate name)
