@@ -1,4 +1,4 @@
-#DATABASE HOW TOs
+#DATABASE HOW TOs#
 This file explains how to execute common administrative tasks for the CCFT database
 **DELETE A RECORD**
 1. Log in to the server as root. You will be prompted for a password after entering this code
