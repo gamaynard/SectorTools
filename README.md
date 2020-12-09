@@ -4,9 +4,11 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 [**KEEP SOFTWARE UP TO DATE**](server_update.md)
 
-[**TRANSFER FILES TO AND FROM THE SERVER**](file_transfer.md)
+# USING SOFTWARE PACKAGES
 
-# DATABASE HOW TOs
+[**QUOTA MARKET SCRAPER**](quota_scraper.md)
+
+# MySQL DATABASE HOW TOs
 
 This section explains how to execute common administrative tasks for the CCFT MySQL database
 
