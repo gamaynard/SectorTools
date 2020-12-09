@@ -1,10 +1,27 @@
+# SERVER HOW TOs
+
+This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server
+
+**KEEP SOFTWARE UP TO DATE**
+
+1. Log in to the AWS server with PuTTY
+2. If upgrades are necessary, you will see the following message after you log in
+`X updates can be installed immediately`
+`X of these updates are security updates`
+3. To queue the updates, enter the following code
+`sudo apt update`
+4. To apply the updates, enter the following code (depending on the number of updates, this can be fairly time consume)
+`sudo apt upgrade`
+5. To clean up any unnecessary files, enter the following code
+`sudo apt autoremove`
+
 # DATABASE HOW TOs
 
-This file explains how to execute common administrative tasks for the CCFT database
+This section explains how to execute common administrative tasks for the CCFT MySQL database
 
 **DELETE A TRANSACTION RECORD**
 
-1. Log in to the server as root. You will be prompted for a password after entering this code
+1. Log in to the MySQL server as root. You will be prompted for a password after entering this code
 `mysql -u root -p`
 2. Select the appropriate database (replace `FYXXXX` with the appropriate name)
 `USE FYXXXX;`
