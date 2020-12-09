@@ -1,4 +1,4 @@
-**DATABASE HOW TOs**
+#DATABASE HOW TOs#
 
 This file explains how to execute common administrative tasks for the CCFT database
 
