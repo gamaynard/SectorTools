@@ -6,7 +6,9 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 1. Log in to the AWS server with PuTTY
 2. If upgrades are necessary, you will see the following message after you log in
+
 `X updates can be installed immediately`
+
 `X of these updates are security updates`
 3. To queue the updates, enter the following code
 `sudo apt update`
