@@ -10,6 +10,7 @@ This section explains how to execute common administrative tasks for the CCFT Am
 `X updates can be installed immediately`
 
 `X of these updates are security updates`
+
 3. To queue the updates, enter the following code
 `sudo apt update`
 4. To apply the updates, enter the following code (depending on the number of updates, this can be fairly time consume)
