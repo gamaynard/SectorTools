@@ -2,21 +2,7 @@
 
 This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server
 
-**KEEP SOFTWARE UP TO DATE**
-
-1. Log in to the AWS server with PuTTY
-2. If upgrades are necessary, you will see the following message after you log in
-
-`X updates can be installed immediately`
-
-`X of these updates are security updates`
-
-3. To queue the updates, enter the following code
-`sudo apt update`
-4. To apply the updates, enter the following code (depending on the number of updates, this can be fairly time consume)
-`sudo apt upgrade`
-5. To clean up any unnecessary files, enter the following code
-`sudo apt autoremove`
+[**KEEP SOFTWARE UP TO DATE**](server_update.md)
 
 # DATABASE HOW TOs
 
