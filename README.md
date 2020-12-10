@@ -6,7 +6,7 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 # USING SOFTWARE PACKAGES
 
-[**QUOTA MARKET SCRAPER**](quota_scraper.md)
+[**QUOTA MARKET SUMMARY**](quota_scraper.md)
 
 # MySQL DATABASE HOW TOs
 
