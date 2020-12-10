@@ -6,6 +6,8 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 # USING SOFTWARE PACKAGES
 
+This section explains how to use the independent software packages developed to support the Mooncusser Sector
+
 [**QUOTA MARKET SUMMARY**](quota_scraper.md)
 
 # MySQL DATABASE HOW TOs
