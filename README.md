@@ -2,15 +2,15 @@
 
 This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server that hosts the Mooncusster Sector's database and reporting software. 
 
-[**KEEP SOFTWARE UP TO DATE**](server_update.md)
+[**KEEP SOFTWARE UP TO DATE**](/Manuals/server_update.md)
 
 # USING SOFTWARE PACKAGES
 
 This section explains how to use the independent software packages developed to support the Mooncusser Sector
 
-[**QUOTA MARKET SUMMARY**](quota_scraper.md)
+[**QUOTA MARKET SUMMARY**](/Manuals/quota_scraper.md)
 
-[**WEEKLY ANNUAL CATCH ENTITLEMENT REPORTING**](WAR.md) 
+[**WEEKLY ANNUAL CATCH ENTITLEMENT REPORTING**](/Manuals/WAR.md) 
 
 # MySQL DATABASE HOW TOs
 
