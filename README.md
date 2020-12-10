@@ -10,7 +10,7 @@ This section explains how to use the independent software packages developed to 
 
 [**QUOTA MARKET SUMMARY**](quota_scraper.md)
 
-[**Weekly Annual Catch Entitlement Reporting**](WAR.md) 
+[**WEEKLY ANNUAL CATCH ENTITLEMENT REPORTING**](WAR.md) 
 
 # MySQL DATABASE HOW TOs
 
