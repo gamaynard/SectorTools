@@ -1,0 +1,3 @@
+## Keeping the HTTPS certificate up to date
+
+In order to keep login information on the server secure, we need to make sure that the login pages use HTTPS (Hypertext Transfer Protocol Secure) instead of HTTP. To keep the "S" in HTTPS, we must maintain a certificate. One way the certificates ensure security is by expiring every 90 days, which necessitates updating them before that expiration date occurs. All of the HTTPS certificates for our domains are managed through a software package called ["CERTBOT"](https://certbot.eff.org/) developed by the Electronic Frontier Foundation, a leading non-profit advocacy group for internet privacy and security.  
