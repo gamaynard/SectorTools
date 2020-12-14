@@ -4,6 +4,8 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 [**KEEP SOFTWARE UP TO DATE**](/Manuals/server_update.md)
 
+[**KEEP HTTPS CERTIFICATES UP TO DATE**](/Manuals/https_update.md)
+
 # USING SOFTWARE PACKAGES
 
 This section explains how to use the independent software packages developed to support the Mooncusser Sector
