@@ -26,3 +26,13 @@ exit;
 ```
 mysql -u root -p FY20XX < /home/ubuntu/databaseBuilder.sql
 ```
+
+6. Log back in to the MySQL console to see if everything worked. Run the following code (replacing `FYXX` with your database name) to view the tables present in your new database. 
+```
+mysql -u root -p
+USE FY20XX;
+SHOW TABLES;
+```
+
+7. If everything worked correctly, you should see the following output:
+![mysql_init1.PNG](/SupportingFiles/mysql_init1.PNG)
