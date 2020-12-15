@@ -37,3 +37,7 @@ SHOW TABLES;
 7. If everything worked correctly, you should see the following output:
 
 ![mysql_init1.PNG](/SupportingFiles/mysql_init1.PNG)
+
+Congratulations! The initial database architecture for the new fishing year has been assembled. The next step will be to upload staffing information, sector rosters, manager contact information, etc. Those instructions can be found [here](/Manuals/infoUpload.md)
+
+[**Click here to return to the main README file**](/README.md)
