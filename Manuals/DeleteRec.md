@@ -1,4 +1,4 @@
-**DELETE A TRANSACTION RECORD**
+# How to delete a transaction record from the database
 
 1. Log in to the MySQL server as root. You will be prompted for a password after entering this code
 `mysql -u root -p`
