@@ -1,6 +1,8 @@
 # SERVER HOW TOs
 
-This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server that hosts the Mooncusster Sector's database and reporting software. 
+This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server that hosts the Mooncusster Sector's database and reporting software.
+
+[**CONNECT TO THE SERVER FROM A WINDOWS COMPUTER**](/Manuals/server_connect.md)
 
 [**KEEP SOFTWARE UP TO DATE**](/Manuals/server_update.md)
 
