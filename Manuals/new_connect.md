@@ -12,3 +12,5 @@ This process may seem a little intimidating, but you only need to do it once to 
 - WARNING: THIS IS YOUR ONLY CHANCE TO DOWNLOAD AND SAVE THE PRIVATE KEY SO DO NOT IGNORE IT OR LOSE THE FILE
 ```
 ![aws_createKeyPair.PNG](/SupportingFiles/aws3.PNG)
+5. Launch the puttygen.exe program from your start menu. The easiest way to do this is just to type `puttygen.exe` into the Windows start menu search. You should see a screen that looks like this. 
+![puttygen1.PNG](/SupportingFiles/puttygen1.PNG)
