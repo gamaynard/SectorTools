@@ -40,3 +40,5 @@ This process may seem a little intimidating, but you only need to do it once to 
 ```
 
 9. In the sidebar menu, navigate back to **SESSION**. Enter a name for these settings in the **SAVED SESSIONS** box, and press **SAVE**. Now, you should be able to double click the name of your saved session in the **SAVED SESSIONS** box to open a text-only interface into the server. 
+
+[**Click here to return to the main README file**](/README.md)
