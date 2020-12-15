@@ -13,5 +13,5 @@ This process may seem a little intimidating, but you only need to do it once to 
 ```
 ![aws_createKeyPair.PNG](/SupportingFiles/aws3.PNG)
 
-5. Launch the puttygen.exe program from your start menu. The easiest way to do this is just to type `puttygen.exe` into the Windows start menu search. On the opening screen, select the **SSH-1(RSA)** option, then press **<LOAD>**.
+5. Launch the puttygen.exe program from your start menu. The easiest way to do this is just to type `puttygen.exe` into the Windows start menu search. On the opening screen, select the **SSH-1(RSA)** option, then press **LOAD**.
 ![puttygen1.PNG](/SupportingFiles/puttygen1.PNG)
