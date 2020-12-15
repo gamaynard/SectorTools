@@ -15,3 +15,5 @@ This process may seem a little intimidating, but you only need to do it once to 
 
 5. Launch the puttygen.exe program from your start menu. The easiest way to do this is just to type `puttygen.exe` into the Windows start menu search. On the opening screen, select the **SSH-1(RSA)** option, then press **LOAD**.
 ![puttygen1.PNG](/SupportingFiles/puttygen1.PNG)
+6. Select the private key file you downloaded before and you will see the key and the key fingerprint show up in the puttygen box. Press the **SAVE PRIVATE KEY** button and save the resulting file with a `.ppk` extension. This is the key you will use to connect to the server through PuTTY. 
+![puttygen2.PNG](/SupportingFiles/puttygen2.PNG)
