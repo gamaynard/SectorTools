@@ -13,3 +13,6 @@
 `sudo apt upgrade`
 5. To clean up any unnecessary files, enter the following code
 `sudo apt autoremove`
+
+
+[**Click here to return to the main README file**](/README.md)
