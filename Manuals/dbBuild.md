@@ -14,7 +14,7 @@ mysql -u root -p
 ```
 
 4. Once you're in the MySQL console, enter the following command to build a new database, replacing `FY20XX` with the appropriate fishing year.
-```dist
+```diff
 -WARNING: THERE CANNOT BE SPACES IN NAMES, SO `FY 20XX` WON'T WORK, BUT `FY20XX` WILL
 ```
 ```
