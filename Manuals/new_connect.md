@@ -7,5 +7,7 @@ This process may seem a little intimidating, but you only need to do it once to 
 ![aws_homescreen.PNG](/SupportingFiles/aws1.PNG)
 3. On the left-hand side of the EC2 screen, under **NETWORK & SECURITY** select the **Key Pairs** option.
 ![aws_EC2screen.PNG](/SupportingFiles/aws2.PNG)
-4. Click on the orange **CREATE KEY PAIR** button in the top right corner of the screen and you should see the options below. Enter a name that describes the computer being used. For example, you could use the computer's name on the CCCFA network (`"HOOK-##"`) or something along those lines. Be sure that you've selected the correct key type for use with PuTTY (.ppk) and press the orange **CREATE KEY PAIR** button to create the keys. 
+4. Click on the orange **CREATE KEY PAIR** button in the top right corner of the screen and you should see the options below. Enter a name that describes the computer being used. For example, you could use the computer's name on the CCCFA network (`"HOOK-##"`) or something along those lines. Be sure that you've selected the correct key type for use with PuTTY (.ppk) and press the orange **CREATE KEY PAIR** button to create the keys. You will be prompted to save the private key in a safe place. 
+### GitLab Orange Heading
+{: .gitlab-orange}
 ![aws_createKeyPair.PNG](/SupportingFiles/aws3.PNG)
