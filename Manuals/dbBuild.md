@@ -13,11 +13,16 @@ curl -o databaseBuilder.sql https://raw.githubusercontent.com/gamaynard/SectorTo
 mysql -u root -p
 ```
 
-4. Once you're in the MySQL console, enter the following command to build a new database, replacing `FY20XX` with the appropriate fishing year.
+4. Once you're in the MySQL console, enter the following command to initialize a new database, replacing `FY20XX` with the appropriate fishing year.
 ```diff
 -WARNING: THERE CANNOT BE SPACES IN NAMES, SO `FY 20XX` WON'T WORK, BUT `FY20XX` WILL
 ```
 ```
 CREATE DATABASE FY20XX;
 exit;
+```
+
+5. Run the database builder script from the main AWS terminal to construct the database architecture (tables, relationships, etc.), again, replacing `FYXX` with the name of your new database and entering your password when prompted. 
+```
+mysql -u root -p FY20XX < /home/ubuntu/databaseBuilder.sql
 ```
