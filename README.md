@@ -21,3 +21,5 @@ This section explains how to use the independent software packages developed to 
 This section explains how to execute common administrative tasks for the CCFT MySQL database
 
 [**DELETE A TRANSACTION RECORD**](/Manuals/DeleteRec.md)
+
+[**BUILD A NEW, EMPTY DATABASE FOR THE UPCOMING FISHING YEAR**](/Manuals/dbBuild.md)
