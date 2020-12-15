@@ -35,4 +35,5 @@ SHOW TABLES;
 ```
 
 7. If everything worked correctly, you should see the following output:
+
 ![mysql_init1.PNG](/SupportingFiles/mysql_init1.PNG)
