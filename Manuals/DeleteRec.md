@@ -10,3 +10,5 @@
 5. Now, the record can be deleted from the `POTENTIAL_TRANSACTIONS` table using the following code and replacing `x` with the TransactionNumber from Step 3. `DELETE FROM POTENTIAL_TRANSACTIONS WHERE TransactionNumber = x;`
 
 As long as you haven't seen any error messages, you should be good to go at this point. If you want to double check, you can run the first query (`SELECT * FROM POTENTIAL_TRANSACTIONS WHERE ... ;` from Step 3. If the record has been removed, you should get the following response from the server. `Empty set (0.00 sec)`. Now, you can close your connection to the server using the following code `exit;`
+
+[**Click here to return to the main README file**](/README.md)
