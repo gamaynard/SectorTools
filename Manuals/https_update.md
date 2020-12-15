@@ -9,3 +9,5 @@ To keep the certificates up to date, you will need to log in to the server termi
 To ensure everything is working correctly, visit the [testing page run by SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=www.fisheriestrust.xyz) and you should get the following output.
 
 ![SSL_Labs_screenshot.png](/SupportingFiles/SSL.PNG)
+
+[**Click here to return to the main README file**](/README.md)
