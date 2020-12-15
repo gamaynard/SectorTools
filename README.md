@@ -20,7 +20,7 @@ This section explains how to use the independent software packages developed to 
 
 This section explains how to execute common administrative tasks for the CCFT MySQL database
 
-**DELETE A TRANSACTION RECORD**
+[**DELETE A TRANSACTION RECORD**](/Manuals/DeleteRec.md)
 
 1. Log in to the MySQL server as root. You will be prompted for a password after entering this code
 `mysql -u root -p`
