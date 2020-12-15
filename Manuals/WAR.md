@@ -7,3 +7,5 @@ In order to use the software, you will need to download the setup file [here](ht
 Once you've installed the program on your Windows computer, you can run it from the start menu or from the desktop shortcut. On running the software you will be prompted to indicate whether you want to apply in season adjustments to quota. This may be necessary once or twice early in the year as GARFO finalizes carry over amounts and ACE allocations. If you press "1" to indicate "yes", you will be prompted to enter an adjustment amount (in lbs) for each stock. 
 
 After completing the in season adjustments prompt, you will be prompted to load last week's report through a pop-up, file selection menu.
+
+[**Click here to return to the main README file**](/README.md)
