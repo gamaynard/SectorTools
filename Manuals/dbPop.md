@@ -44,4 +44,10 @@ This file contains contact information for all CCCFA staff associated with the C
 ## Stocks
 Filename:`FY20XXStocks.csv`
 
-Barring major changes in the New England Multispecies FMP, this file should be the same year to year, just with a different name. It is a translator between different data silos so that species names and stock areas can be compared as needed. You can download the most up to date version of the file [here](/SupportingFiles/FY20XXStocks.csv)
+Barring major changes in the New England Multispecies FMP, this file should be the same year to year, just with a different name. It is a translator between different data silos so that species names and stock areas can be compared as needed. You can manually download the most up to date version of the file [here](https://raw.githubusercontent.com/gamaynard/SectorTools/master/SupportingFiles/FY20XXStocks.csv) by copy/pasting the text data into a spreadsheet and saving it out as a .csv file with the appropriate name. Alternately, you can download it directly to the AWS server by logging in to a server session through PuTTY and entering the following code, replacing FY20XX with the appropriate fishing year:
+
+`
+cd /home/ubuntu/FY20XX/
+curl -o FY20XXStocks.csv https://raw.githubusercontent.com/gamaynard/SectorTools/master/SupportingFiles/FY20XXStocks.csv
+`
+
