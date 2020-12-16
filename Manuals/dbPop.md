@@ -35,8 +35,13 @@ This file contains contact information for all New England sector managers. It w
 ## Staff
 Filename: `FY20XXStaff.csv`
 
-This file contains contact information for all CCCFA staff associated with the CCFT. Each transaction that is entered into the ledger for this year will be stamped with the StaffID of the staff member who entered it. That StaffID links back to this table for easy tracking of who cut what deals when. The file must be manually compiled at the beginning of each year. Last year’s file is a good starting point. An example file can be seen [here](/SupportingFiles/Fy20XXStaff.csv). The `StaffID` column is an index that should start at "1" and increment by 1. For example, if there are three staff working on the data, the StaffID column should contain the values 1, 2, and 3. The **Role** column should contain either the value `admin` for people who have access to the database to actually edit the data or `readonly` for people who only view the information without changing it. 
+This file contains contact information for all CCCFA staff associated with the CCFT. Each transaction that is entered into the ledger for this year will be stamped with the StaffID of the staff member who entered it. That StaffID links back to this table for easy tracking of who cut what deals when. The file must be manually compiled at the beginning of each year. Last year’s file is a good starting point. An example file can be seen [here](/SupportingFiles/FY20XXStaff.csv). The `StaffID` column is an index that should start at "1" and increment by 1. For example, if there are three staff working on the data, the StaffID column should contain the values 1, 2, and 3. The **Role** column should contain either the value `admin` for people who have access to the database to actually edit the data or `readonly` for people who only view the information without changing it. 
 ```diff
 - WARNING: DO NOT USE COMMAS IN ANY FIELDS
 - WARNING: DO NOT USE SPECIAL CHARACTERS IN PHONE NUMBERS
 ```
+
+## Stocks
+Filename:`FY20XXStocks.csv`
+
+Barring major changes in the New England Multispecies FMP, this file should be the same year to year, just with a different name. It is a translator between different data silos so that species names and stock areas can be compared as needed. You can download the most up to date version of the file [here](/SupportingFiles/FY20XXStocks.csv)
