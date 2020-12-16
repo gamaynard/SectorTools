@@ -12,6 +12,16 @@ This file contains a list of permit holders enrolled in the sector for FY20XX. I
 - WARNING: VALUES IN THE STATE COLUMN SHOULD BE TWO LETTER POSTAL ABBREVIATIONS
 ```
 
+## Sector Roster
+Filename: `FY20XXSectorRoster.csv`
+
+This file was downloaded as is from the SIMM (path: **Planning Downloads --> Sector Roster --> Generate Report in CSV**). It contains all of the MRI numbers, PSC values, and ACE values for each permit, but not the permit owners. Once the file has been downloaded from the SIMM, you will need to manually add permit holder information from the sector records, being sure to match the names in `FY2020PermitHolders.csv`. An example file can be seen [here](/SupportingFiles/FY20XXSectorRoster.csv)
+```diff
+- WARNING: THE OWNER COLUMN MUST BE MANUALLY ADDED
+- WARNING: ALL OWNER RECORDS MUST HAVE AN EXACT MATCH (INCLUDING CASE) IN THE OWNER COLUMN OF THE PERMIT HOLDERS TABLE
+- WARNING: THE FORMATTING OF THIS SIMM DOWNLOAD WAS LAST VERIFIED IN FY2020
+```
+
 ## Sectors
 Filename: `FY20XXSectors.csv`
 
@@ -20,4 +30,6 @@ This file contains contact information for all New England sector managers. It w
 - WARNING: DO NOT USE COMMAS IN ANY FIELDS
 - WARNING: DO NOT USE SPECIAL CHARACTERS IN PHONE NUMBERS
 - WARNING: VALUES IN THE STATE COLUMN SHOUDL BE TWO LETTER POSTAL ABBREVIATIONS
+```
 
+## 
