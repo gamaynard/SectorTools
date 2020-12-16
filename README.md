@@ -8,6 +8,8 @@ This section explains how to execute common administrative tasks for the CCFT Am
 
 [**KEEP HTTPS CERTIFICATES UP TO DATE**](/Manuals/https_update.md)
 
+[**SECURELY TRANSFER FILES TO AND FROM THE SERVER**](/Manuals/WinSCP.md)
+
 # USING SOFTWARE PACKAGES
 
 This section explains how to use the independent software packages developed to support the Mooncusser Sector
