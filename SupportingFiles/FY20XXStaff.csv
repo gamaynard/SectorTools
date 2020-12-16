@@ -1,0 +1,3 @@
+StaffID,StaffFirst,StaffLast,Email,Telephone,Role
+1,Trust,Manager,trust@email.org,1234567890,'admin'
+2,Assistant,Manager,asst@email.org,9876543210,'readonly'
