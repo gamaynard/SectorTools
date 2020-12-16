@@ -5,4 +5,9 @@ Congratulations on making it to this step; the MySQL server is almost ready to u
 ## Permit Holders
 Filename: `FY20XXPermitHolders.csv`
 
-This file contains a list of permit holders enrolled in the sector for FY20XX. It is generated manually based on last year’s `FY20XXPermitHolders.csv` file, removing anyone who unenrolled and adding new enrollees. An example file can be seen [here](/SupportingFiles/FY20XXPermitHolders.csv). 
+This file contains a list of permit holders enrolled in the sector for FY20XX. It is generated manually based on last year’s `FY20XXPermitHolders.csv` file, removing anyone who unenrolled and adding new enrollees. An example file can be seen [here](/SupportingFiles/FY20XXPermitHolders.csv).
+```diff
+- WARNING: DO NOT USE COMMAS IN BUSINESS NAMES
+- WARNING: DO NOT USE SPECIAL CHARACTER IN PHONE NUMBERS
+- WARNING: VALUES IN THE STATE COLUMN SHOULD BE TWO LETTER POSTAL ABBREVIATIONS
+```
