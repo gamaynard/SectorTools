@@ -5,9 +5,19 @@ Congratulations on making it to this step; the MySQL server is almost ready to u
 ## Permit Holders
 Filename: `FY20XXPermitHolders.csv`
 
-This file contains a list of permit holders enrolled in the sector for FY20XX. It is generated manually based on last year’s `FY20XXPermitHolders.csv` file, removing anyone who unenrolled and adding new enrollees. An example file can be seen [here](/SupportingFiles/FY20XXPermitHolders.csv).
+This file contains a list of permit holders enrolled in the sector for FY20XX. It is generated manually based on last year’s `FY20XXPermitHolders.csv` file, removing anyone who unenrolled and adding new enrollees. An example file can be seen [here](/SupportingFiles/FY20XXPermitHolders.csv). The `OwnerID` column is an index that should start at "1" and increment by 1. For example, if there are three members in the sector, the OwnerID column should contain the values 1, 2, and 3. 
 ```diff
-- WARNING: DO NOT USE COMMAS IN BUSINESS NAMES
+- WARNING: DO NOT USE COMMAS IN ANY FIELDS
 - WARNING: DO NOT USE SPECIAL CHARACTER IN PHONE NUMBERS
 - WARNING: VALUES IN THE STATE COLUMN SHOULD BE TWO LETTER POSTAL ABBREVIATIONS
 ```
+
+## Sectors
+Filename: `FY20XXSectors.csv`
+
+This file contains contact information for all New England sector managers. It was originally created using the information available through NOAA [here](https://www.fisheries.noaa.gov/new-england-mid-atlantic/commercial-fishing/sector-manager-contact-information). However, this information is not necessarily up to date, so the MOON sector manager should double check as necessary. An example file can be seen [here](/SupportingFiles/FY20XXSectors.csv). Much of this information may remain the same year to year. 
+```diff
+- WARNING: DO NOT USE COMMAS IN ANY FIELDS
+- WARNING: DO NOT USE SPECIAL CHARACTERS IN PHONE NUMBERS
+- WARNING: VALUES IN THE STATE COLUMN SHOUDL BE TWO LETTER POSTAL ABBREVIATIONS
+
