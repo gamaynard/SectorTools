@@ -12,7 +12,7 @@ You should see a screen that looks like this:
 
 which shows that you have one server instance running in the US East Zone (Amazon has server farms around the world) and that the US East Zone is operating normally. Click on `Instances Running` and then the long address that looks something like `i-01xxxxxxxxxxxxxxx`. Now, you should see a screen that looks like this.
 
-~[EC2_Instance](/SupportingFiles/ec2b.PNG)
+![EC2_Instance](/SupportingFiles/ec2b.PNG)
 
 You can start or reboot the server using the menu in the top right that says `Instance State`.
 
