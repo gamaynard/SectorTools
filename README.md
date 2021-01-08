@@ -29,3 +29,5 @@ This section explains how to execute common administrative tasks for the CCFT My
 [**BUILD A NEW, EMPTY DATABASE FOR THE UPCOMING FISHING YEAR**](/Manuals/dbBuild.md)
 
 [**LOAD NEW DATA TO POPULATE AN EMPTY DATABASE**](/Manuals/dbPop.md)
+
+[**DOWNLOAD ALL OF THE DATABASE TABLES AS SEPARATE .CSV FILES**](/Manuals/dbDownload.md)
