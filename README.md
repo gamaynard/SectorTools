@@ -2,6 +2,8 @@
 
 This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server that hosts the Mooncusster Sector's database and reporting software.
 
+[**ACCESS THE AMAZON WEB SERVICES INTERFACE TO START / RESTART THE SERVER**](/Manuals/server_reboot.md)
+
 [**CONNECT TO THE SERVER FROM A WINDOWS COMPUTER**](/Manuals/server_connect.md)
 
 [**KEEP SOFTWARE UP TO DATE**](/Manuals/server_update.md)
