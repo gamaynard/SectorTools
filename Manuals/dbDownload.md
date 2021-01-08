@@ -15,3 +15,5 @@
 ![phpMyAdmin3](/SupportingFiles/php3.PNG)
 
 5. Scrolling down, be sure to select the `Export tables as separate files` option and the `Put column names in the first row` option as above before pressing the `Go` button. You should now get a zipped archive of all of the data in the database. You may need to do some work in Excel to reestablish the links that are explained in the database schemas. 
+
+[**Click here to return to the main README file**](/README.md)
