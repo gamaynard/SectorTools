@@ -4,7 +4,7 @@ Log in to the AWS management console [here](https://signin.aws.amazon.com/signin
 
 In the AWS Services Menu, select the `EC2` option under the `Compute` menu. 
 
-[awsHome](/Screenshots/aws1.PNG)
+[awsHome](/SupportingFiles/aws1.PNG)
 
 You should see a screen that looks like this:
 
