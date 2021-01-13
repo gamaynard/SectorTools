@@ -12,11 +12,11 @@
 
 6. Starting from the top of the file, for consistency's sake update the header section (lines 1:14)
 
-  - Line 5 needs a new fishing year
+    - Line 5 needs a new fishing year
   
-  - Add or update your name as the Editor on Line 8
+    - Add or update your name as the Editor on Line 8
   
-  - Add or update the Date Edited on Line 10
+    - Add or update the Date Edited on Line 10
 
 ```
 ## ---------------------------
