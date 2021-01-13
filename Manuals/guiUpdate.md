@@ -81,7 +81,7 @@ selectInput(
      ),
 ```
         
-   - There can be as many or as few permit holders as you need in the list. Obviously CCCFA will always be one of the permit holders. A few things to watch out for when writing these lists in. 
+   - There can be as many or as few permit holders as you need in the list. Obviously CCCFA will always be one of the permit holders. The other permit holders should be listed in the `/home/ubuntu/FY20XX/FY20XXPermitHolders.csv` file with the same numbers that they correspond to in the list here. 
    - The lists need to match each other exactly. A few things to watch out for:
        - Each entry should end with a comma
        - The name of the permit holder must be enclosed in quotation marks
