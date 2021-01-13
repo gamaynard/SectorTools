@@ -48,3 +48,40 @@
 65     password=password
 66   )
   ```
+
+8. The trickiest block to update control the select user menus. These two blocks need to match the new year's permit holders file (typically located at `/home/ubuntu/FY20XX/FY20XXPermitHolders.csv`). The block of code you will need to edit will start around Line 296 and look similar to the following:
+```
+selectInput(
+    inputId="ownerTo",
+    label="Lessee",
+    multiple=FALSE,
+    choices=list(
+        "CCCFA"=1,
+        "PERMIT HOLDER 2"=2,
+        "PERMIT HOLDER 3"=3,
+        "PERMIT HOLDER 4"=4,
+        "PERMIT HOLDER 5"=5,
+        "NULL"
+        ),
+    selected="NULL"
+    ),
+ selectInput(
+    inputId="ownerFrom",
+    label="Lessor",
+    multiple=FALSE,
+    choices=list(
+        "CCCFA"=1,
+        "PERMIT HOLDER 2"=2,
+        "PERMIT HOLDER 3"=3,
+        "PERMIT HOLDER 4"=4,
+        "PERMIT HOLDER 5"=5,
+        "NULL"
+        ),
+     selected="NULL"
+     ),
+```
+        - There can be as many or as few permit holders as you need in the list. Obviously CCCFA will always be one of the permit holders. A few things to watch out for when writing these lists in. 
+        - The lists need to match each other exactly. A few things to watch out for:
+            - Each entry should end with a comma
+            - The name of the permit holder must be enclosed in quotation marks
+            - The final entry must be "NULL" with no comma
