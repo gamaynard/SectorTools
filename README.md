@@ -30,4 +30,6 @@ This section explains how to execute common administrative tasks for the CCFT My
 
 [**LOAD NEW DATA TO POPULATE AN EMPTY DATABASE**](/Manuals/dbPop.md)
 
+[**UPDATE THE GRAPHICAL USER INTERFACE FOR THE NEW YEAR**](/Manuals/guiUpdate.md)
+
 [**DOWNLOAD ALL OF THE DATABASE TABLES AS SEPARATE .CSV FILES**](/Manuals/dbDownload.md)
