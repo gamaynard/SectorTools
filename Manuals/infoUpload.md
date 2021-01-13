@@ -1,5 +1,9 @@
 ## Uploading Data into a newly created database
 
+# Required files
+
+First, create any required text files by following the instructions [here](/Manuals/dbPop.md)
+
 # Direct uploads
 Some files can simply be uploaded as-is. For these files, the easiest way to load them is through the database administrator interface  [here](https://admin.fisheriestrust.xyz). 
 
