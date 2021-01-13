@@ -81,8 +81,8 @@ selectInput(
      ),
 ```
         
-        - There can be as many or as few permit holders as you need in the list. Obviously CCCFA will always be one of the permit holders. A few things to watch out for when writing these lists in. 
-        - The lists need to match each other exactly. A few things to watch out for:
-            - Each entry should end with a comma
-            - The name of the permit holder must be enclosed in quotation marks
-            - The final entry must be "NULL" with no comma
+   - There can be as many or as few permit holders as you need in the list. Obviously CCCFA will always be one of the permit holders. A few things to watch out for when writing these lists in. 
+   - The lists need to match each other exactly. A few things to watch out for:
+       - Each entry should end with a comma
+       - The name of the permit holder must be enclosed in quotation marks
+       - The final entry must be "NULL" with no comma
