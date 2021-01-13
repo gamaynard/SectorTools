@@ -25,3 +25,5 @@ In the example, we'll walk through uploading the PermitHolders.csv file. To uplo
 ![PHP_step2](/SupportingFiles/php_step2.PNG)
 
 3. You should get a message from the server that says *Import has been successfully finished*. To make sure the records imported correctly, click on the table again in the left hand column to view the data that was just imported. 
+
+[**Click here to return to the main README file**](/README.md)
