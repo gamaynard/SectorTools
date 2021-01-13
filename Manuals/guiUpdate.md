@@ -19,18 +19,18 @@
     - Add or update the Date Edited on Line 10
 
 ```
-## ---------------------------
-##
-## Script name: ui.R
-##
-## Purpose of script: ui side script for FY20XX CCFT database
-##
-## Author: George A. Maynard
-## Editor: YOUR NAME HERE
-## Date Created: 2020-07-20
-## Date Edited: TODAY'S DATE HERE
-## Copyright (c) George Alphonse Maynard, 2020
-## Email: galphonsemaynard@gmail.com
-##
-## ---------------------------
+1  ## ---------------------------
+2  ##
+3  ## Script name: ui.R
+4  ##
+5  ## Purpose of script: ui side script for FY20XX CCFT database
+6  ##
+7  ## Author: George A. Maynard
+8  ## Editor: YOUR NAME HERE
+9  ## Date Created: 2020-07-20
+10 ## Date Edited: TODAY'S DATE HERE
+11 ## Copyright (c) George Alphonse Maynard, 2020
+12 ## Email: galphonsemaynard@gmail.com
+13 ##
+14 ## ---------------------------
 ```
