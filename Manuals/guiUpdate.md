@@ -93,4 +93,4 @@ selectInput(
 
 ![Find+Replace](/SupportingFiles/FNR.PNG)
 
-11. Press `<ctrl>+<s>` to save the file, and that's it!
+11. Press `<CTRL> + <s>` to save the file, and that's it!
