@@ -86,3 +86,11 @@ selectInput(
        - Each entry should end with a comma
        - The name of the permit holder must be enclosed in quotation marks
        - The final entry must be "NULL" with no comma
+
+9. The `ui.R` file should be good to go. Press the save button in the Notepad ++ editor, and your changes should be saved to the server. 
+
+10. The `server.R` file is much simpler to edit. Open this file in Notepad ++ and press `<CTRL> + <h>` to open the "Replace" dialogue box. The example screenshot below shows how to fill out the dialogue box for the FY2020 to FY2021 transition. Once the dialogue box is filled out, double check it, then press `<Replace All>`. There should be 10 replacements made (the number will appear as blue text in the bottom left of the dialogue box). 
+
+![Find+Replace](/SupportingFiles/FNR.PNG)
+
+11. Press `<ctrl>+<s>` to save the file, and that's it!
