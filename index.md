@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
+# SERVER HOW TOs
 
-You can use the [editor on GitHub](https://github.com/gamaynard/SectorTools/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This section explains how to execute common administrative tasks for the CCFT Amazon Web Services server that hosts the Mooncusster Sector's database and reporting software.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[**ACCESS THE AMAZON WEB SERVICES INTERFACE TO START / RESTART THE SERVER**](/Manuals/server_reboot.md)
 
-### Markdown
+[**CONNECT TO THE SERVER FROM A WINDOWS COMPUTER**](/Manuals/server_connect.md)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[**KEEP SOFTWARE UP TO DATE**](/Manuals/server_update.md)
 
-```markdown
-Syntax highlighted code block
+[**KEEP HTTPS CERTIFICATES UP TO DATE**](/Manuals/https_update.md)
 
-# Header 1
-## Header 2
-### Header 3
+[**SECURELY TRANSFER FILES TO AND FROM THE SERVER**](/Manuals/WinSCP.md)
 
-- Bulleted
-- List
+# USING SOFTWARE PACKAGES
 
-1. Numbered
-2. List
+This section explains how to use the independent software packages developed to support the Mooncusser Sector
 
-**Bold** and _Italic_ and `Code` text
+[**QUOTA MARKET SUMMARY**](/Manuals/quota_scraper.md)
 
-[Link](url) and ![Image](src)
-```
+[**WEEKLY ANNUAL CATCH ENTITLEMENT REPORTING**](/Manuals/WAR.md) 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# MySQL DATABASE HOW TOs
 
-### Jekyll Themes
+This section explains how to execute common administrative tasks for the CCFT MySQL database
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gamaynard/SectorTools/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+[**DELETE A TRANSACTION RECORD**](/Manuals/DeleteRec.md)
 
-### Support or Contact
+[**BUILD A NEW, EMPTY DATABASE FOR THE UPCOMING FISHING YEAR**](/Manuals/dbBuild.md)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[**LOAD NEW DATA TO POPULATE AN EMPTY DATABASE**](/Manuals/dbPop.md)
+
+[**UPDATE THE GRAPHICAL USER INTERFACE FOR THE NEW YEAR**](/Manuals/guiUpdate.md)
+
+[**DOWNLOAD ALL OF THE DATABASE TABLES AS SEPARATE .CSV FILES**](/Manuals/dbDownload.md)
